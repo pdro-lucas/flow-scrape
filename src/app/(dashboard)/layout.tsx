@@ -10,6 +10,7 @@ import { AppSidebar } from '@/components/app-sidebar'
 import { cookies } from 'next/headers'
 import { BreadcrumbHeader } from '@/components/breadcrumbHeader'
 import { ModeToggle } from '@/components/modeToggle'
+import { SignedIn, UserButton } from '@clerk/nextjs'
 
 export default async function layout({ children }: { children: ReactNode }) {
   const cookieStore = await cookies()
@@ -25,8 +26,11 @@ export default async function layout({ children }: { children: ReactNode }) {
               <SidebarTrigger />
               <BreadcrumbHeader />
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
               <ModeToggle />
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </div>
           </header>
           <Separator />
