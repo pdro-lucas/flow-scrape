@@ -6,6 +6,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
+  BreadcrumbSeparator,
 } from './ui/breadcrumb'
 import React from 'react'
 
@@ -24,6 +25,7 @@ export function BreadcrumbHeader() {
                   {path === '' ? 'Home' : path}
                 </BreadcrumbLink>
               </BreadcrumbItem>
+              <BreadcrumbSeparator />
             </React.Fragment>
           ))}
         </BreadcrumbList>
